@@ -11,6 +11,12 @@
 
 @implementation <%= class_name %>
 
+/*
+-(void)dealloc {
+  [super dealloc];
+}
+*/
+
 @end
 
 // This initialization function gets called when we import the Ruby module.
