@@ -3,7 +3,7 @@ require "rake"
 
 bundle_name    = '<%= module_name %>'
 src_paths      = %w[Classes] # any included projects, add folders here
-src_files      = FileList['Classes/**/*.m'] # any included projects, add files here
+src_files      = `find Classes -name '*.m' -exec grep -l '^void Init_' \\;`.split(" ") # included projects, add files here
 req_frameworks = %w[Foundation] # use only frameworks available to both Cocoa + iPhone SDKs
 req_libraries  = %w[] # e.g. add sqlite3 for libsqlite3 to be used by linking step
 
